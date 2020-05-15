@@ -1,0 +1,16 @@
+.cart-icon-wrapper {
+  float: right;
+  margin: 10px 50px;
+  cursor: pointer;
+}
+
+.cart-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.cart-counter {
+  color: #4b5548;
+  font-size: 20px;
+  margin-right: 15px;
+}

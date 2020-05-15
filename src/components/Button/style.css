@@ -1,0 +1,23 @@
+.button {
+  background-color: #4b5548;
+  border: none;
+  color: white;
+  padding: 10px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  line-height: 1.5;
+  vertical-align: middle;
+  cursor: pointer;
+  min-width: 250px;
+}
+
+.button:hover {
+  outline: 0;
+  background-color: #1e2d2b;
+}
+
+.button:focus {
+  outline: 0;
+}

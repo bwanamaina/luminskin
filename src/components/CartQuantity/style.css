@@ -1,0 +1,9 @@
+.cart-quantity {
+  margin-bottom: 10px;
+  padding: 0 0 10px 20px;
+}
+
+input[type='text'].quantity {
+  width: 50px;
+  text-align: center;
+}

@@ -1,0 +1,61 @@
+.cart {
+  height: 100%;
+  background: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40%;
+  z-index: 200;
+  box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+  background-color: rgb(243, 242, 240);
+}
+.cart.open {
+  transform: translateX(0);
+}
+
+.close-cart {
+  float: left;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.currency {
+  float: right;
+  width: 100px;
+  margin: 5px 20px;
+}
+
+.your-cart {
+  margin: 15px auto;
+  display: inline-block;
+}
+
+.sub-total {
+  padding: 10px;
+}
+
+.cart-body {
+  overflow: scroll;
+  max-height: 550px;
+}
+
+.total-caption {
+  float: left;
+}
+
+.total-amount {
+  float: right;
+}
+
+.checkout-button {
+  width: 100%;
+  padding: 10px;
+}
+
+.checkout-button button {
+  width: 100%;
+  margin-top: 20px;
+}

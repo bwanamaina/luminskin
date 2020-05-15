@@ -1,0 +1,10 @@
+.card {
+  width: 33.33%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.image {
+  width: 150px;
+  height: 150px;
+}

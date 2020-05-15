@@ -7,6 +7,7 @@ import Card from './components/Card';
 import Header from './components/Header';
 import CartIcon from './components/CartIcon';
 import Cart from './components/Cart';
+import ErrorBoundary from './components/ErrorBoundary';
 // import Backdrop from './components/Backdrop';
 
 // setup the client with the API url
@@ -170,12 +171,16 @@ function App() {
    * but i find this more readable
    */
   const ErrorComponent = <div>An error occurred :(</div>;
+  /**
+   * trying to keep it simple here
+   * we can use more elegant way to show spinner
+   */
   const LoadingComponent = <div>Loading...</div>;
 
   if (isLoading) return LoadingComponent;
   if (errorInfo) return ErrorComponent;
   return (
-    <div>
+    <ErrorBoundary>
       <Header>
         <CartIcon onClick={onCartToggle} itemCount={cartCount} />
       </Header>
@@ -187,8 +192,9 @@ function App() {
         onCurrencyChange={onCurrencyChange}
         currency={currentCurrency}
       />
+      {/* disabled backdrop to allow user add more items when cart drawer is open */}
       {/* {backdrop} */}
-      <div className="wrapper">
+      <div className='wrapper'>
         {products &&
           products.map((product) => {
             return (
@@ -203,7 +209,7 @@ function App() {
             );
           })}
       </div>
-    </div>
+    </ErrorBoundary>
   );
 }
 

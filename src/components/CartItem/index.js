@@ -6,14 +6,14 @@ import './style.css';
 import CartQuantity from '../CartQuantity';
 
 const CartItem = ({ item, currency }) => {
-  // eslint-disable-next-line no-unused-vars
   const [cartItems, setCartItems] = useContext(CartContext);
+  // TODO
   const onRemoveItem = () => {
-    const index = cartItems.indexOf(item);
-    if (index > -1) {
-      const newArray = cartItems.slice();
-      setCartItems(newArray.splice(index, 1));
-    }
+    const newArray = cartItems.slice();
+    const index = cartItems.findIndex((itm) => itm.id === item.id);
+    // if (index > -1) {
+    setCartItems(newArray.splice(index, 1));
+    // }
   };
 
   // decrement
@@ -53,15 +53,20 @@ const CartItem = ({ item, currency }) => {
 
   return (
     item && (
-      <div className="cart-item">
-        <i className="remove-item" onClick={onRemoveItem}>
+      <div className='cart-item'>
+        {/* onDecrement even-handler will cater for removal */}
+        <i
+          className='remove-item'
+          style={{ display: 'none' }}
+          onClick={onRemoveItem}
+        >
           X
         </i>
-        <p className="cart-title">{item.title}</p>
+        <p className='cart-title'>{item.title}</p>
         <div style={{ textAlign: 'right' }}>
-          <img src={item.image_url} className="cart-image" alt={item.title} />
+          <img src={item.image_url} className='cart-image' alt={item.title} />
         </div>
-        <div className="quantity-wrapper">
+        <div className='quantity-wrapper'>
           <CartQuantity
             onDecrement={onDecrement}
             onIncrement={onIncrement}
@@ -71,7 +76,7 @@ const CartItem = ({ item, currency }) => {
             }}
           />
           <div style={{ textAlign: 'center' }}>
-            <span className="cart-item-price">
+            <span className='cart-item-price'>
               {currency} {item.price}
             </span>
           </div>

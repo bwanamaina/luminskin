@@ -10,7 +10,6 @@
   line-height: 1.5;
   vertical-align: middle;
   cursor: pointer;
-  min-width: 250px;
 }
 
 .button:hover {

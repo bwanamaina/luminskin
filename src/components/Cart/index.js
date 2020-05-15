@@ -20,7 +20,7 @@ const Cart = ({
   const [cartItems, setCartItems] = useContext(CartContext);
   const cartTotal = cartItems.reduce(
     (acc, curr) => acc + curr.price * curr.quantity,
-    0,
+    0
   );
 
   const cartClass = showCart ? 'cart open' : 'cart';
@@ -29,12 +29,12 @@ const Cart = ({
       <Header>
         <img
           onClick={onClick}
-          className="close-cart"
+          className='close-cart'
           src={CloseCart}
-          alt="close cart"
+          alt='close cart'
         />
-        <span className="your-cart">Your Cart</span>
-        <div className="currency">
+        <span className='your-cart'>Your Cart</span>
+        <div className='currency'>
           <Select onChange={onCurrencyChange}>
             {currencyList &&
               currencyList.map((money) => {
@@ -43,28 +43,28 @@ const Cart = ({
           </Select>
         </div>
       </Header>
-      <div className="cart-body">
+      <div className='cart-body'>
         {cartItems && cartItems.length ? (
           cartItems.map((item) => {
             return <CartItem currency={currency} key={item.id} item={item} />;
           })
         ) : (
-          <p>No items</p>
+          <p style={{ textAlign: 'center' }}>No items</p>
         )}
       </div>
       <hr />
-      <div className="sub-total">
-        <div className="total-caption">Sub Total</div>
-        <div className="total-amount">
+      <div className='sub-total'>
+        <div className='total-caption'>Sub Total</div>
+        <div className='total-amount'>
           {currency} {cartTotal}
         </div>
       </div>
-      <div className="checkout-button">
+      <div className='checkout-button'>
         <Button
           onClick={() => {
             /*checkout logic */
           }}
-          caption="PROCEED TO CHECKOUT"
+          caption='PROCEED TO CHECKOUT'
         />
       </div>
     </div>
